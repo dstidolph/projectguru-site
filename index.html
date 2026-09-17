@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Guru &mdash; Windows System Telemetry, Mastered.</title>
+<meta name="description" content="Project Guru is a lightweight, independent C++ agent for Windows system telemetry: health tracking, restore point management, and process metrics.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          guru: {
+            bg: '#0a0e14',
+            panel: '#111722',
+            border: '#1f2937',
+            accent: '#22d3ee',
+          },
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #0a0e14; }
+  .glow-text {
+    text-shadow: 0 0 24px rgba(34, 211, 238, 0.35);
+  }
+</style>
+</head>
+<body class="bg-guru-bg text-gray-200 antialiased">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 border-b border-guru-border bg-guru-bg/80 backdrop-blur">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="#" class="flex items-center gap-2 text-lg font-semibold tracking-tight text-white">
+        <svg class="h-6 w-6 text-guru-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+        <span>Project Guru</span>
+      </a>
+      <div class="hidden items-center gap-8 text-sm font-medium text-gray-300 sm:flex">
+        <a href="#features" class="transition hover:text-guru-accent">Features</a>
+        <a href="#architecture" class="transition hover:text-guru-accent">Architecture</a>
+        <a href="dashboard.html" class="transition hover:text-guru-accent">Dashboard</a>
+        <a href="https://github.com/dstidolph/ProjectGuru" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 transition hover:text-guru-accent">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.42 7.86 10.95.57.1.78-.25.78-.55v-1.94c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 012.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.44-2.7 5.41-5.27 5.7.42.36.78 1.07.78 2.16v3.2c0 .3.2.66.79.55C20.21 21.4 23.5 17.09 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.12),transparent_60%)]"></div>
+    <div class="mx-auto max-w-4xl px-6 py-28 text-center sm:py-36">
+      <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-guru-border bg-guru-panel px-3 py-1 text-xs font-medium text-guru-accent">
+        <span class="h-1.5 w-1.5 rounded-full bg-guru-accent"></span>
+        Independent Windows telemetry agent
+      </p>
+      <h1 class="glow-text text-4xl font-bold tracking-tight text-white sm:text-6xl">
+        Windows System Telemetry, Mastered.
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-400">
+        Project Guru is a lightweight, independent C++ agent that watches over your Windows
+        endpoints &mdash; health, restore points, and process activity &mdash; without the bloat
+        of a full monitoring suite.
+      </p>
+      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="https://github.com/dstidolph/ProjectGuru/releases" class="w-full rounded-md bg-guru-accent px-6 py-3 text-sm font-semibold text-gray-900 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-300 sm:w-auto">
+          Download Agent
+        </a>
+        <a href="https://github.com/dstidolph/ProjectGuru#readme" class="w-full rounded-md border border-guru-border px-6 py-3 text-sm font-semibold text-gray-200 transition hover:border-guru-accent hover:text-guru-accent sm:w-auto">
+          Read the Docs
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="border-t border-guru-border bg-guru-panel/40 py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mx-auto mb-16 max-w-2xl text-center">
+        <h2 class="text-3xl font-bold text-white">Built for signal, not noise</h2>
+        <p class="mt-4 text-gray-400">Three focused capabilities that keep endpoints observable without the overhead.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-3">
+
+        <!-- Feature 1 -->
+        <div class="rounded-lg border border-guru-border bg-guru-bg p-6 transition hover:border-guru-accent/50">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-md bg-guru-accent/10 text-guru-accent">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12h4l3 8 4-16 3 8h4"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white">System Health Tracking</h3>
+          <p class="mt-2 text-sm text-gray-400">
+            Continuous visibility into CPU, memory, disk, and service state so drift and
+            degradation are caught before they become incidents.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="rounded-lg border border-guru-border bg-guru-bg p-6 transition hover:border-guru-accent/50">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-md bg-guru-accent/10 text-guru-accent">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 3"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white">Restore Point Management</h3>
+          <p class="mt-2 text-sm text-gray-400">
+            Tracks system restore point creation and coverage, flagging endpoints that are
+            left without a recent recovery snapshot.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="rounded-lg border border-guru-border bg-guru-bg p-6 transition hover:border-guru-accent/50">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-md bg-guru-accent/10 text-guru-accent">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="12" width="4" height="8"/>
+              <rect x="10" y="7" width="4" height="13"/>
+              <rect x="17" y="3" width="4" height="17"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white">Process Metrics</h3>
+          <p class="mt-2 text-sm text-gray-400">
+            Captures running process and installed-program inventories, surfacing changes
+            that matter for security and compliance review.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section id="architecture" class="py-24">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <h2 class="text-3xl font-bold text-white">Simple, secure architecture</h2>
+      <p class="mt-6 text-lg text-gray-400">
+        The Project Guru agent is a standalone C++ client that runs directly on the endpoint.
+        It collects telemetry locally and securely communicates with a custom backend service
+        using <span class="text-guru-accent">Protocol Buffers</span> over HTTPS &mdash; a
+        compact, strongly-typed wire format that keeps both the agent and server lightweight
+        and independent of any third-party monitoring platform.
+      </p>
+      <div class="mt-12 flex flex-col items-center justify-center gap-4 text-sm font-medium text-gray-300 sm:flex-row">
+        <div class="rounded-md border border-guru-border bg-guru-panel px-5 py-3">C++ Agent</div>
+        <span class="text-guru-accent">&rarr; protobuf / HTTPS &rarr;</span>
+        <div class="rounded-md border border-guru-border bg-guru-panel px-5 py-3">Guru Server</div>
+        <span class="text-guru-accent">&rarr; ingest / diff / alert &rarr;</span>
+        <div class="rounded-md border border-guru-border bg-guru-panel px-5 py-3">Web Dashboard</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-guru-border py-10">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-gray-500 sm:flex-row">
+      <p>&copy; <span id="year"></span> Project Guru. All rights reserved.</p>
+      <a href="https://github.com/dstidolph/ProjectGuru" target="_blank" rel="noopener noreferrer" class="transition hover:text-guru-accent">
+        github.com/dstidolph/ProjectGuru
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
